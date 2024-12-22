@@ -63,8 +63,12 @@ defmodule Oidcc.Plug.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:oidcc, "~> 3.2.0"},
+      # TODO: Switch back to released version
+      # "~> 3.2.0"},
+      {:oidcc, github: "erlef/oidcc", branch: "igniter"},
       {:plug, "~> 1.14"},
+      {:igniter, "~> 0.3.45", optional: true},
+      {:phoenix, "~> 1.7", only: [:dev, :test]},
       {:ex_doc, "~> 0.29", only: :dev, runtime: false},
       {:excoveralls, "~> 0.18.1", only: :test, runtime: false},
       {:dialyxir, "~> 1.4", only: :dev, runtime: false},
